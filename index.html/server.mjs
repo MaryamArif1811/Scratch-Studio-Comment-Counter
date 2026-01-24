@@ -1,18 +1,19 @@
+import express from "express";
+import fetch from "node-fetch";
 import path from "path";
 import { fileURLToPath } from "url";
+
+const app = express();
+const port = process.env.PORT || 5000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Serve your HTML file
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-import express from "express";
-import fetch from "node-fetch";
-
-const app = express();
-const port = process.env.PORT || 5000;
 
 async function getAllComments(studioId) {
   let total = 0;
