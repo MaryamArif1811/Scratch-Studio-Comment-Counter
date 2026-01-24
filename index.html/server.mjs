@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 // Serve your HTML file
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "index.html","index.html"));
 });
 
 async function getAllComments(studioId) {
